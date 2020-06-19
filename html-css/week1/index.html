@@ -1,142 +1,214 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <meta charset="utf-8" />
-   <title>ember blooming</title>
-   <meta name="viewport" content="width=device-width" initial-scale="1.0">
-   <link rel="stylesheet" type="text/css" href="style.css"/>
- </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>ember blooming</title>
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
- <body>
- <div id="container">
-   <header>
-       <div class="flex-container">
-    <div id="namebox">
-     <h1 class="pagetitle">ember blooming</h1>
+  <body>
+    <div id="container">
+      <header>
+        <div class="flex-container">
+          <div id="namebox">
+            <h1>ember blooming</h1>
 
-      <nav>
-       <ul>
-        
-        <li><a aria-label="navigation to my profile"
-            href="#profile">Profile</a></li>
-        <li><a aria-label="navigation to my work experience"
-            href="#work-experience">Work experience</a></li>
-        <li><a aria-label="navigation to my education"
-            href="#education">Education</a></li>
-       </ul>
-      </nav>
-      </div>
-      <div id="portrait">
-      <img src="me.png" alt="image of me holding onto a large piece of clay" role="img" aria-label="[image of me holding onto a large piece of clay]">
-      </div>
-      </div>
-    </header>
+            <nav>
+              <ul>
+                <li>
+                  <a
+                    role="button"
+                    aria-label="navigation to my profile"
+                    href="#profile"
+                    >Profile</a
+                  >
+                </li>
+                <li>
+                  <a
+                    role="button"
+                    aria-label="navigation to my work experience"
+                    href="#work-experience"
+                    >Work experience</a
+                  >
+                </li>
+                <li>
+                  <a
+                    role="button"
+                    aria-label="navigation to my education"
+                    href="#education"
+                    >Education</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="portrait">
+            <img
+              src="assets/me.png"
+              alt="image of me holding onto a large piece of clay"
+            />
+          </div>
+        </div>
+      </header>
 
-   <main>
+      <main>
+        <article>
+          <div
+            aria-label="here you can read about my background"
+            class="profile"
+          >
+            <h2>Profile</h2>
 
-   <article role="main">
+            <p>
+              I am a multi-cultural graduate student in MA Sculpture with a
+              high-level of creative thinking and hands-on skills. With my
+              extensive expertise in fine arts and my background I am ready to
+              dedicate my time to learn how to code and be creative about it. I
+              am happy to be a part of <em>Hack Your Future</em>, a free coding
+              school for people with precarious migrant realities. My future
+              aspirations are to be a pioneer trans woman refugee hired in
+              Danish tech industry with a salary that will help me have a more
+              stable life.
+            </p>
+          </div>
 
-   <div aria-label="here you can read about my background">
-     <!--how would i add ARIA here to describe what can an user read here? or how can they listen to the text?-->
-     <h2 id="profile">Profile</h2>
+          <aside>
+            <h4>Learning strategies</h4>
+            <p>
+              These few strategies helped me how to approach learning before
+              doing my resume:
+            </p>
+            <ul>
+              <li>
+                <a
+                  role="button"
+                  aria-label="read more about strategies for effective learning"
+                  href="https://www.learningscientists.org/videos/"
+                  target="_blank"
+                  >Six strategies for effective learning</a
+                >
+              </li>
+              <li>
+                <a
+                  role="button"
+                  aria-label="read more about powerful learning strategies"
+                  href="https://www.cultofpedagogy.com/learning-strategies/"
+                  target="_blank"
+                  >Six powerful learning strategies</a
+                >
+              </li>
+            </ul>
 
-     <p class="profile">
-       I am a multi-cultural graduate student in MA Sculpture with a high-level of creative thinking and hands-on skills. 
-       With my extensive expertise in fine arts and my background I am ready to dedicate my time to learn how to code and be creative about it.
-       I am happy to be a part of <em>Hack Your Future</em>, a free coding school for people with precarious migrant realities. 
-       My future aspirations are to be a pioneer trans woman refugee hired in Danish tech industry with a salary that will help me have a more stable life.
-    </p>
-     
-   </div>
+            <h4>Hack Your Future (HYF) resources</h4>
+            <p style="text-align: center; margin-bottom: 20px;">
+              <a
+                role="button"
+                aria-label="direct access to HYF github repositories"
+                href="https://github.com/hackyourfuture-cph"
+                target="_blank"
+              >
+                <img
+                  src="assets/git.png"
+                  alt="git hub icon that is a mix of octopus and a cat"
+              /></a>
+            </p>
+            <p style="text-align: center;">
+              <a
+                role="button"
+                aria-label="direct access to HYF youtube channel"
+                href="https://www.youtube.com/channel/UCgWEvuTAyg7qbWcq0M8w4EQ"
+                target="_blank"
+              >
+                <img
+                  src="assets/icons8-youtube-64.png"
+                  alt="youtube icon that is a play button sign"
+              /></a>
+            </p>
+          </aside>
+          <div aria-label="here you can read about my work experience">
+            <h3 class="work-experience">Work experience</h3>
 
-   <aside>
-    <h4>Learning strategies</h4>
-     <p>
-         These few strategies helped me how to approach learning before doing my resume:</p>
-         <ul>
-             <li><a aria-label="read more about strategies for effective learning"
-                 href="https://www.learningscientists.org/videos/">Six strategies for effective learning</a></li>
-             <li><a aria-label="read more about powerful learning strategies"
-                 href="https://www.cultofpedagogy.com/learning-strategies/">Six powerful learning strategies</a></li>
-         </ul>
-    
-     <h4>Hack Your Future (HYF) resources</h4>
-    <p style="text-align:center; margin-bottom:20px;"> 
-        <a aria-label="direct access to HYF github repositories"
-                 href="https://github.com/hackyourfuture-cph">
-                 <img src="git.png"
-                      alt="git hub icon that is a mix of octopus and a cat"
-                 ></a></p>
-               <p style="text-align:center;"> 
-                   <a aria-label="direct access to HYF youtube channel"
-                 href="https://www.youtube.com/channel/UCgWEvuTAyg7qbWcq0M8w4EQ">
-                 <img src="icons8-youtube-64.png"
-                      alt="youtube icon that is a play button sign"
-                 ></a></p> 
+            <p>
+              <strong>Customer service</strong>,
+              <em>Docken, Copenhagen, Denmark</em>
+              <span style="text-align: right;">Dec 2018 - Dec 2019</span>
+            </p>
+            <ul>
+              <li>Focus on teamwork</li>
+              <li>Dynamic working environment</li>
+              <li>Handling many different tasks per one shift</li>
+            </ul>
+            <p>
+              <strong>Server</strong>,
+              <em>Crepes on Cole, San Francisco, California</em> May 2017 - Sept
+              2018
+            </p>
+            <ul>
+              <li>Omnipresent flow of service</li>
+              <li>Focus on team work and grattitude</li>
+              <li>Served a key function in educating new team members</li>
+            </ul>
+          </div>
 
-  </aside>
-   <div aria-label="here you can read about my work experience">
-    <!--same question for how to add ARIA-->
-    <h3 id="work-experience">Work experience</h3>
+          <div aria-label="here you can read about my education">
+            <h3 class="education">Education</h3>
 
-    <p>
-     <strong>Customer service</strong>, <em>Docken, Copenhagen, Denmark</em> <span style="text-align:right;">Dec 2018 - Dec 2019</span> </p>
-     <ul>
-        <li>Focus on teamwork</li>
-        <li>Dynamic working environment</li>
-        <li>Handling many different tasks per one shift</li>
-     </ul>
-    <p>
-     <strong>Server</strong>, <em>Crepes on Cole, San Francisco, California</em> May 2017 - Sept 2018</p>
-     <ul>
-        <li>Omnipresent flow of service</li>
-        <li>Focus on team work and grattitude</li>
-        <li>Served a key function in educating new team members</li>
-     </ul>   
-   </div>
-  
-   <div aria-label="here you can read about my education">
+            <p>
+              <strong>Master of Fine Arts</strong>, The Royal Danish Academy of
+              Fine Arts, School of Visual Arts, Copenhagen, DK Oct 2018 -
+              Present
+            </p>
+            <ul>
+              <li>Intended specialization: Sculpture</li>
+              <li>
+                Key courses: Bronze casting workshop, Poetics of body and its
+                movements, Plaster workshop
+              </li>
+            </ul>
+            <p>
+              <strong>Bachelor of Fine Arts</strong>, The Royal Danish Academy
+              of Fine Arts, School of Visual Arts, Copenhagen, DK
+              Completion:2017
+            </p>
+            <ul>
+              <li>Intended specialization: Language, Space and Scale</li>
+              <li>
+                Key courses: Telling is listening, What we learn from the ocean,
+                Introduction to clay and molding
+              </li>
+            </ul>
+          </div>
+        </article>
+      </main>
 
-   <h3 id="education">Education</h3>
-
-    <p>
-    <strong>Master of Fine Arts</strong>, The Royal Danish Academy of Fine Arts, School of Visual Arts, Copenhagen, DK  Oct 2018 - Present</p>
-     <ul>
-        <li>Intended specialization: Sculpture</li>
-        <li>Key courses: Bronze casting workshop, Poetics of body and its movements, Plaster workshop</li>
-     </ul>
-    <p>
-    <strong>Bachelor of Fine Arts</strong>, The Royal Danish Academy of Fine Arts, School of Visual Arts, Copenhagen, DK Completion:2017</p>
-     <ul>
-        <li>Intended specialization: Language, Space and Scale</li>
-        <li>Key courses: Telling is listening, What we learn from the ocean, Introduction to clay and molding</li>
-     </ul>
+      <footer>
+        <h4>Contact info</h4>
+        <ul>
+          <li>
+            <a
+              role="button"
+              aria-label="send me a direct message via email"
+              href="mailto:ipoljupci@gmail.com"
+              target="_blank"
+              >send me a message</a
+            >
+          </li>
+          <li>
+            <a
+              role="button"
+              aria-label="direct link to visit my instagram"
+              href="https://www.instagram.com/ember_aura_blooming"
+              target="_blank"
+              >@ember_aura_blooming</a
+            >
+          </li>
+        </ul>
+        <p>
+          Dannevirkegade 3, 3tv<br />
+          1763, Copenhagen V
+        </p>
+      </footer>
     </div>
-   </article>
-   </main>
-
-
- <footer>
-   <h4>Contact info</h4>
-   <ul>
-       <li><a aria-label="send me a direct message via email"
-        href="mailto:ipoljupci@gmail.com">send me a message</a></li>
-       <li><a aria-label="direct link to visit my instagram"
-        href="https://www.instagram.com/ember_aura_blooming">@ember_aura_blooming</a></li>
-   </ul>
-   <p>Dannevirkegade 3, 3tv</br>
-      1763, Copenhagen V </p>
- </footer>
- </div>
- </body>
-
-
-
-
-
-
-
-
-
-
+  </body>
 </html>
