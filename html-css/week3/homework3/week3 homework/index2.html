@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">Logo</div>
+        <nav>Navigation</nav>
+      </header>
+      <main>
+        <form action="#">
+          <h1>Sign up to yourcustomtailor.com</h1>
+
+          <h2>Step 2/4 - how can we reach you?</h2>
+          <h3>Progress</h3>
+          <div class="progress-bar">
+            <span style="width: 40%;"></span>
+          </div>
+          <p>
+            We will probably need to stay in touch somehow. Let us know how we
+            can reach you?
+          </p>
+          <div class="block">
+            <label for="email">Email&#42;</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              title="Please enter valid email address"
+              pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
+              required
+            />
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              title="format +45xxxxxxxx"
+              pattern="^\+(?:[0-9]●?){6,14}[0-9]$"
+            />
+          </div>
+          <div class="block">
+            <label for="password">Password&#42;</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              title="Minimum 10 characters, uppercase and lowercase letters"
+              pattern="“^(?"
+              =".*[a-z])(?"
+              =".*[A-Z])[a-zA-Z\d]{10,}$”"
+              required
+            />
+          </div>
+          <div class="block">
+            <label for="re-enter-password">Re-enter Password&#42;</label>
+            <input
+              type="password"
+              id="re-enter-password"
+              name="re-enter-password"
+              title="Minimum 10 characters, uppercase and lowercase letters"
+              pattern="“^(?"
+              =".*[a-z])(?"
+              =".*[A-Z])[a-zA-Z\d]{10,}$”"
+              required
+            />
+          </div>
+          <p>
+            I want to sign up for the newsletter
+          </p>
+          <div class="block">
+            <label for="weekly-news">Weekly news</label>
+            <input type="radio" id="weekly-news" name="news" />
+            <label for="monthly-news">Monthly news</label>
+            <input type="radio" id="monthly-news" name="news" />
+            <label for="no-news">Don´t send me news</label>
+            <input type="radio" id="no-news" name="news" />
+          </div>
+          <div>
+            <input
+              onclick="parent.location='index3.html'"
+              type="button"
+              class="submit"
+              value="Next step"
+            />
+            <!--<input type="submit" value="Next step" class="submit" />-->
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
