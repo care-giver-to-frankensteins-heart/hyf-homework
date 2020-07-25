@@ -50,10 +50,9 @@
               type="password"
               id="password"
               name="password"
-              title="Minimum 10 characters, uppercase and lowercase letters"
-              pattern="“^(?"
-              =".*[a-z])(?"
-              =".*[A-Z])[a-zA-Z\d]{10,}$”"
+              title="Minimum 10 characters both alpahbetic and numeric allowed, and must contain at least 1 uppercase and 1 lowercase letters"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{10,}$"
+              minlength="10"
               required
             />
           </div>
@@ -63,10 +62,9 @@
               type="password"
               id="re-enter-password"
               name="re-enter-password"
-              title="Minimum 10 characters, uppercase and lowercase letters"
-              pattern="“^(?"
-              =".*[a-z])(?"
-              =".*[A-Z])[a-zA-Z\d]{10,}$”"
+              title="Minimum 10 characters both alphabetic and numeric allowed, and must contain at least 1 uppercase and 1 lowercase letters"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{10,}$"
+              minlength="10"
               required
             />
           </div>
@@ -75,7 +73,7 @@
           </p>
           <div class="block">
             <label for="weekly-news">Weekly news</label>
-            <input type="radio" id="weekly-news" name="news" />
+            <input type="radio" id="weekly-news" name="news" checked />
             <label for="monthly-news">Monthly news</label>
             <input type="radio" id="monthly-news" name="news" />
             <label for="no-news">Don´t send me news</label>
