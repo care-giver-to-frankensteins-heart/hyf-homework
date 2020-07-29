@@ -22,12 +22,12 @@ let secondWords = [
   "Directors",
   "Shoes",
 ];
-let startupName;
-const randomNumber = Math.floor(Math.random() * 10) + 0;
-startupName = randomNumber;
-console.log(startupName);
-const randomNumberSecond = Math.floor(Math.random() * 10) + 0;
-startupName = randomNumberSecond;
-console.log(startupName);
 
-console.log(`The startup: "Beautiful Building" contains 18 characters.`);
+const randomNumber = Math.floor(Math.random() * 10) + 0;
+const startupNameFirst = firstWords[randomNumber];
+
+const startupNameSecond = secondWords[randomNumber];
+const startupName = `${startupNameFirst} ${startupNameSecond}`;
+console.log(
+  `The startup: ${startupName} contains ${startupName.length} characters.`
+);
