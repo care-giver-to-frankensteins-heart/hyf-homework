@@ -20,24 +20,29 @@ const seriesDurations = [
 ];
 const avgLifeSpan = 80 * 365 * 24 * 60; //minutes
 
-function logOutSeriesText() {
-  let seriesTotalTime = 0;
+function logOutSeriesText(seriesDurations) {
+  let totalPercentage = 0;
   for (let i = 0; i < seriesDurations.length; i++) {
-    let totalTime =
-      seriesDurations[i].days * 24 * 60 +
-      seriesDurations[i].hours * 60 +
-      seriesDurations[i].minutes;
-    seriesTotalTime = seriesTotalTime + totalTime;
+    let seriesMinutesLifePercentage =
+      ((seriesDurations[i].days * 24 * 60 +
+        seriesDurations[i].hours * 60 +
+        seriesDurations[i].minutes) /
+        avgLifeSpan) *
+      100;
+
     console.log(
-      seriesDurations[i].title +
-        " took " +
-        (totalTime / avgLifeSpan) * 100 +
-        " of my life"
+      `"${seriesDurations[i].title}" took ${seriesMinutesLifePercentage.toFixed(
+        3
+      )}% of my life.`
     );
+
+    totalPercentage = (
+      seriesMinutesLifePercentage + seriesMinutesLifePercentage
+    ).toFixed(3);
   }
-  console.log(
-    "In total that is " + (seriesTotalTime / avgLifeSpan) * 100 + " of my life"
-  );
+
+  console.log(`
+  In total that is ${totalPercentage}% of my life!`);
 }
 
-logOutSeriesText();
+logOutSeriesText(seriesDurations);
