@@ -112,7 +112,7 @@ console.log("\n");
 const notes = [];
 
 function saveNote(content, id) {
-  note = {
+  notes.push({note: content, id, checked: false})
     note: content,
     id: id,
     checked: false,
