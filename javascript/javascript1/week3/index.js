@@ -36,7 +36,7 @@ const travelInformation = {
 
 function getTravelTime(travelInformation) {
   const time = travelInformation.destinationDistance / travelInformation.speed;
-  console.log(time);
+  
   const hour = Math.floor(time);
   const minutes = Math.floor((time - hour) * 60);
   return `${hour} hours and ${minutes} minutes`;
@@ -171,7 +171,7 @@ function noteFinished(id) {
   }
   for (let i = 0; i < notes.length; i++) {
     if (id == notes[i].id) {
-      if (notes[i].checked == false) {
+      if (notes[i].checked) {
         notes[i].checked = true;
       } else {
         notes[i].checked = false;
