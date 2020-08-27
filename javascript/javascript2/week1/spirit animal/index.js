@@ -136,7 +136,7 @@ function changeOption() {
     button.style.display = "none";
   } else {
     button.style.display = "inline-block";
-    userInput.removeEventListener("mouseover", getSpiritAnimalName, true);
+    userInput.removeEventListener("mouseover", getSpiritAnimalName, false);
     button.addEventListener("click", getSpiritAnimalName);
   }
 }
