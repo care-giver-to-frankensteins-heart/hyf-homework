@@ -44,6 +44,11 @@ div.appendChild(descriptionForInput);
 
 const userInput = document.createElement("input");
 div.appendChild(userInput);
+userInput.addEventListener("change", () => {
+  if (userInput.innerHTML === "") {
+    button.innerHTML = "Get your spirit animal name!";
+  }
+});
 
 const button = document.createElement("button");
 button.innerHTML = "Get your spirit animal name!";
@@ -101,4 +106,4 @@ button.addEventListener("click", getSpiritAnimalName);
 
 //event type - user hovers with mouse over input box and spirit animal name generates
 
-//userInput.addEventListener("mouseover", submitResult);
+userInput.addEventListener("mouseover", getSpiritAnimalName);
