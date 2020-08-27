@@ -47,7 +47,7 @@ for (let i = 0; i < userOptions.length; i++) {
   radio.name = "user-choice";
   radio.id = "radio-" + userOptions[i];
   radio.value = userOptions[i];
-  radio.checked = radio.value === chosenOption ? "checked" : "";
+  //radio.checked = radio.value === chosenOption ? "checked" : "";
   radio.addEventListener("click", (e) => {
     chosenOption = e.target.value;
     changeOption();
@@ -117,26 +117,26 @@ const getSpiritAnimalName = () => {
       animals
     )}`;
   };
-  generateRandomName();
 
   //No input
   if (userName === "") {
     targetElement.innerHTML = "No name entered";
   } else {
-    //New spirit animal
+    generateRandomName();
     button.innerHTML = "Get another name!";
   }
 };
 //Initialize the input to show result on click
-button.addEventListener("click", getSpiritAnimalName);
+//button.addEventListener("click", getSpiritAnimalName);
 
 //For when user clicks the radio buttons-----------------------
 function changeOption() {
   if (document.getElementById("radio-mouseover").checked) {
     userInput.addEventListener("mouseover", getSpiritAnimalName);
-    button.removeEventListener("click");
+    button.style.display = "none";
   } else {
+    button.style.display = "inline-block";
+    userInput.removeEventListener("mouseover", getSpiritAnimalName, true);
     button.addEventListener("click", getSpiritAnimalName);
-    userInput.removeEventListener("mouseover");
   }
 }
