@@ -38,6 +38,32 @@ console.log(count(danishString2)); // returns {total: 4, æ: 1, ø: 2, å: 1}
 //Markup
 const div = document.querySelector(".root-el-for-name");
 
+//Add radio button for the user to choose how to display result ----
+let chosenOption = "click";
+const userOptions = ["mouseover", "click"];
+for (let i = 0; i < userOptions.length; i++) {
+  const radio = document.createElement("input");
+  radio.type = "radio";
+  radio.name = "user-choice";
+  radio.id = "radio-" + userOptions[i];
+  radio.value = userOptions[i];
+  radio.checked = radio.value === chosenOption ? "checked" : "";
+  radio.addEventListener("click", (e) => {
+    chosenOption = e.target.value;
+    changeOption();
+  });
+  const radioLabel = document.createElement("label");
+  radioLabel.innerHTML = "On" + userOptions[i];
+  radioLabel.appendChild(radio);
+  div.appendChild(radioLabel);
+}
+//-------------------------------------------------------
+
+//Separate the radio buttons from the input element
+const br = document.createElement("br");
+div.appendChild(br);
+//-------------------------------------------------------
+
 const descriptionForInput = document.createElement("label");
 descriptionForInput.innerHTML = "Please enter your name";
 div.appendChild(descriptionForInput);
@@ -101,9 +127,16 @@ const getSpiritAnimalName = () => {
     button.innerHTML = "Get another name!";
   }
 };
-//event type - user clicks the button after she entered her name and get a generated spirit animal name
+//Initialize the input to show result on click
 button.addEventListener("click", getSpiritAnimalName);
 
-//event type - user hovers with mouse over input box and spirit animal name generates
-
-userInput.addEventListener("mouseover", getSpiritAnimalName);
+//For when user clicks the radio buttons-----------------------
+function changeOption() {
+  if (document.getElementById("radio-mouseover").checked) {
+    userInput.addEventListener("mouseover", getSpiritAnimalName);
+    button.removeEventListener("click");
+  } else {
+    button.addEventListener("click", getSpiritAnimalName);
+    userInput.removeEventListener("mouseover");
+  }
+}
