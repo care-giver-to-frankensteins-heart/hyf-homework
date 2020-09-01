@@ -59,9 +59,9 @@ const podcasts = [
 //4.Append the li to the ul
 
 //pageBody = document.querySelector("body");
-varUl2 = document.createElement("ul");
+const podcastList = document.createElement("ul");
 //varUl2.innerHTML = "<h1>Podcast</h1>";
-pageBody.appendChild(varUl2);
+pageBody.appendChild(podcastList);
 
 for (let i = 0; i < podcasts.length; i++) {
   let liInPodcast = document.createElement("li");
