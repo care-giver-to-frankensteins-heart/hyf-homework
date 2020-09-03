@@ -20,6 +20,7 @@ let newNumbers = [];
 
 const filterNumbers = numbers.filter((num) => num % 2);
 newNumbers = filterNumbers.map((num) => num * 2);
+console.log(newNumbers);
 
 //Working with movies
 //Copy the movies array in the movies file. Use this array to do the following tasks:
@@ -33,3 +34,73 @@ newNumbers = filterNumbers.map((num) => num * 2);
 //Create an array of movies where a word in the title is duplicated. Fx "Star Wars: The Clone Wars" the word Wars is duplicated. Here are some madeup examples of movies with duplicated words in the title: "The three men and the pistol", "Chase three - The final chase"
 //Calculate the average rating of all the movies using reduce. Optional
 //Count the total number of Good, Average and Bad movies using reduce. A return could fx be {goodMovies: 33, averageMovies: 45, goodMovies: 123} Optional
+
+const movies = require("./movies.json");
+
+//SHORT MOVIES TITLE
+const shortMovieTitle = movies.filter((x) => x.title.length < 4);
+//console.log(shortMovieTitle);
+
+//LONG MOVIES TITLE
+const longMovieTitle = movies.filter((x) => x.title.length >= 50);
+//console.log(longMovieTitle);
+
+//NUMBER OF MOVIES BETWEEN 1980-1989
+const eightiesMoviesTotal = movies.filter(
+  (x) => x.year <= 1989 && x.year >= 1980
+);
+//console.log(eightiesMoviesTotal.length);
+
+//CREATE A NEW ARRAY THAT HAS AN EXTRA KEY CALLED TAG
+const filteredHighRankMovies = movies.filter((x) => x.rating >= 7);
+const highRankMovies = filteredHighRankMovies.map((y) =>
+  Object.assign(y, { tag: "Good" })
+);
+const filteredMediumRankMovies = movies.filter(
+  (x) => x.rating >= 4 && x.rating < 7
+);
+const mediumRankMovies = filteredMediumRankMovies.map((y) =>
+  Object.assign(y, { tag: "Average" })
+);
+const filteredLowRankMovies = movies.filter((x) => x.rating < 4);
+const lowRankMovies = filteredLowRankMovies.map((y) =>
+  Object.assign(y, { tag: "Bad" })
+);
+//console.log(highRankMovies);
+//console.log(mediumRankMovies);
+//console.log(lowRankMovies);
+
+//USE CHAINING
+//const moviesWithHighRating = movies.filter((x) => x.rating > 6);
+//console.log(moviesWithHighRating);
+//const onlyMovieRating = moviesWithHighRating.map((x) => x.rating);
+//console.log(onlyMovieRating);
+
+const highRating = movies.filter((x) => x.rating > 6).map((x) => x.rating);
+//console.log(highRating);
+
+//COUNT TOTAl NUMBER OF MOVIES CONTAINING ANY WORDS
+
+const totalMoviesByKeywords = movies.reduce(
+  (sum, x) =>
+    x.title.search(/Alien/i) >= 0 ||
+    x.title.search(/Benjamin/i) >= 0 ||
+    x.title.search(/Surfer/i) >= 0
+      ? (sum += 1)
+      : sum,
+  0
+);
+
+//console.log(totalMoviesByKeywords);
+
+//AVERAGE RATING OF ALL MOVIES
+const ratedMovies = movies.map((x) => x.rating);
+console.log(ratedMovies);
+
+let total = ratedMovies.reduce(sum, 0);
+function sum(total, value, index, array) {
+  return total + value;
+}
+
+let averageRating = total / ratedMovies.length;
+console.log(averageRating);
