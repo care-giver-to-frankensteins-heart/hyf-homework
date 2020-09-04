@@ -1,91 +1,31 @@
 console.log("Script loaded");
 
 const products = getAvailableProducts();
-const productsUl = document.querySelector("section.products ul");
-console.log(productsUl);
-let ser = [];
 
 function renderProducts(products) {
+  const listOfProducts = document.createElement("ul");
+  const main = document.querySelector("main");
+  main.appendChild(listOfProducts);
+  const ul = document.querySelector("ul");
   products.forEach((product) => {
     const li = document.createElement("li");
-
-    let shipsToHTML = "";
-    product.shipsTo.forEach(
-      (country) => (shipsToHTML += `<li>${country}</li>`)
-    );
-    li.innerHTML = "";
-
-    li.innerHTML = `
-            <ul>
-                <li>${product.name}</li>
-                <li>${product.price}</li>
-                <li>${product.rating}</li>
-                <ul class="ships-to">${shipsToHTML}</ul>
-            </ul>
-        `;
-    productsUl.appendChild(li);
-  });
-  document.getElementById("text").addEventListener("keyup", (e) => {
-    productsUl.innerHTML = "";
-    e.preventDefault();
-    const text = e.target.value;
-    console.log(text);
-    products.filter((pro) => {
-      pro.name.toLocaleLowerCase().match(text) && ser.push(pro);
-    });
-    console.log(ser);
-
-    ser.forEach((product) => {
-      const li = document.createElement("li");
-      console.log(product.name);
-      let shipsToHTML = "";
-      product.shipsTo.forEach(
-        (country) => (shipsToHTML += `<li>${country}</li>`)
-      );
-
-      li.innerHTML = `
-      <ul>
-        <li>${product.name}</li>
-        <li>${product.price}</li>
-        <li>${product.rating}</li>
-        <ul class="ships-to">${shipsToHTML}</ul>
-      </ul>
-      `;
-      productsUl.appendChild(li);
-    });
-
-    ser = [];
-  });
-  document.getElementById("start").addEventListener("change", (e) => {
-    productsUl.innerHTML = "";
-    const rangeValue = e.target.value;
-    const price = rangeValue * 1000;
-    console.log(price);
-
-    products.filter((product) => {
-      product.price >= price && ser.push(product);
-      console.log(ser);
-    });
-    ser.forEach((product) => {
-      const li = document.createElement("li");
-      console.log(product.name);
-      let shipsToHTML = "";
-      product.shipsTo.forEach(
-        (country) => (shipsToHTML += `<li>${country}</li>`)
-      );
-      li.innerHTML = `
-   <ul>
-      <li>${product.name}</li>
-      <li>${product.price}</li>
-      <li>${product.rating}</li>
-      <ul class="ships-to">${shipsToHTML}</ul>
-      </ul>
-      `;
-      productsUl.appendChild(li);
-    });
-    ser = [];
+    li.innerHTML = `<h2>${product.name}</h2><span>price: ${product.price}</span><br><span>Rating: ${product.rating}</span>`;
+    ul.appendChild(li);
   });
 }
 
 renderProducts(products);
-const range = document.getElementById("start");
+const userInput = document.getElementById("products-box");
+
+userInput.addEventListener("keyup", function () {
+  if (userInput.value !== "") {
+    const filteredProducts = products.filter((pro) =>
+      pro.name.toLowerCase().includes(userInput.value)
+    );
+    document.querySelector("ul").innerHTML = "";
+    renderProducts(filteredProducts);
+  } else {
+    document.querySelector("ul").innerHTML = "";
+    renderProducts(products);
+  }
+});

@@ -39,17 +39,17 @@ const movies = require("./movies.json");
 
 //SHORT MOVIES TITLE
 const shortMovieTitle = movies.filter((x) => x.title.length < 4);
-//console.log(shortMovieTitle);
+console.log(shortMovieTitle);
 
 //LONG MOVIES TITLE
 const longMovieTitle = movies.filter((x) => x.title.length >= 50);
-//console.log(longMovieTitle);
+console.log(longMovieTitle);
 
 //NUMBER OF MOVIES BETWEEN 1980-1989
 const eightiesMoviesTotal = movies.filter(
   (x) => x.year <= 1989 && x.year >= 1980
 );
-//console.log(eightiesMoviesTotal.length);
+console.log(eightiesMoviesTotal.length);
 
 //CREATE A NEW ARRAY THAT HAS AN EXTRA KEY CALLED TAG
 const filteredHighRankMovies = movies.filter((x) => x.rating >= 7);
@@ -66,9 +66,9 @@ const filteredLowRankMovies = movies.filter((x) => x.rating < 4);
 const lowRankMovies = filteredLowRankMovies.map((y) =>
   Object.assign(y, { tag: "Bad" })
 );
-//console.log(highRankMovies);
-//console.log(mediumRankMovies);
-//console.log(lowRankMovies);
+console.log(highRankMovies);
+console.log(mediumRankMovies);
+console.log(lowRankMovies);
 
 //USE CHAINING
 //const moviesWithHighRating = movies.filter((x) => x.rating > 6);
@@ -77,7 +77,7 @@ const lowRankMovies = filteredLowRankMovies.map((y) =>
 //console.log(onlyMovieRating);
 
 const highRating = movies.filter((x) => x.rating > 6).map((x) => x.rating);
-//console.log(highRating);
+console.log(highRating);
 
 //COUNT TOTAl NUMBER OF MOVIES CONTAINING ANY WORDS
 
@@ -91,14 +91,13 @@ const totalMoviesByKeywords = movies.reduce(
   0
 );
 
-//console.log(totalMoviesByKeywords);
+console.log(totalMoviesByKeywords);
 
 //AVERAGE RATING OF ALL MOVIES
 const ratedMovies = movies.map((x) => x.rating);
-console.log(ratedMovies);
 
 let total = ratedMovies.reduce(sum, 0);
-function sum(total, value, index, array) {
+function sum(total, value) {
   return total + value;
 }
 
