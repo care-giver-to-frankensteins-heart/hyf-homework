@@ -19,11 +19,36 @@ const userInput = document.getElementById("products-box");
 
 userInput.addEventListener("keyup", function () {
   if (userInput.value !== "") {
-    const filteredProducts = products.filter((pro) =>
+    const filterByName = products.filter((pro) =>
       pro.name.toLowerCase().includes(userInput.value)
     );
     document.querySelector("ul").innerHTML = "";
-    renderProducts(filteredProducts);
+    renderProducts(filterByName);
+  } else {
+    document.querySelector("ul").innerHTML = "";
+    renderProducts(products);
+  }
+});
+
+/*const userInput2 = document.getElementById("price-box");
+
+userInput2.addEventListener("keyup", function () {
+  if (userInput2.value !== "") {
+    const filteredMaxPrice = (pro) => pro.price.match(maxPrice.value);
+    document.querySelector("ul").innerHTML = "";
+    renderProducts(products);
+  }
+});*/
+
+const userInput2 = document.getElementById("price-box");
+userInput2.addEventListener("keyup", function () {
+  if (userInput2.value !== "") {
+    const filterbyPrice = products.filter((pro)
+      => pro.price <= userInput2.value
+    );
+
+    document.querySelector("ul").innerHTML = "";
+    renderProducts(filterbyPrice);
   } else {
     document.querySelector("ul").innerHTML = "";
     renderProducts(products);
