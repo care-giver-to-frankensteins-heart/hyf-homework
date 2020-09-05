@@ -1,6 +1,7 @@
 console.log("Script loaded");
 
 const products = getAvailableProducts();
+products.sort((a, b) => (a.price > b.price ? 1 : -1));
 
 function renderProducts(products) {
   const listOfProducts = document.createElement("ul");
@@ -30,23 +31,12 @@ userInput.addEventListener("keyup", function () {
   }
 });
 
-/*const userInput2 = document.getElementById("price-box");
-
-userInput2.addEventListener("keyup", function () {
-  if (userInput2.value !== "") {
-    const filteredMaxPrice = (pro) => pro.price.match(maxPrice.value);
-    document.querySelector("ul").innerHTML = "";
-    renderProducts(products);
-  }
-});*/
-
 const userInput2 = document.getElementById("price-box");
 userInput2.addEventListener("keyup", function () {
   if (userInput2.value !== "") {
-    const filterbyPrice = products.filter((pro)
-      => pro.price <= userInput2.value
+    const filterbyPrice = products.filter(
+      (pro) => pro.price <= parseInt(userInput2.value)
     );
-
     document.querySelector("ul").innerHTML = "";
     renderProducts(filterbyPrice);
   } else {
