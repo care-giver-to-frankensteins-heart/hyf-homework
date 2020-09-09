@@ -135,7 +135,48 @@ console.log(badMoviesTotal);
 
 //MOVIES WITH DUPLICATED MOVIE TITLE
 
-const regEx = new RegExp(/\b(\w+)\b.*\b\1\b/);
-const titleDoubleWords = movies.filter((x) => x.title.match(regEx));
-console.log("List of all movies with duplicated word in title");
-console.log(titleDoubleWords);
+// Create an array of movies where a word in the title is duplicated.
+// Fx "Star Wars: The Clone Wars" the word Wars is duplicated.
+
+const duplicatedTitles = [];
+
+movies
+  .map((movie) => movie.title.split(""))
+  .forEach((title) =>
+    title.filter((word, index) =>
+      title.indexOf(word) != index
+        ? duplicatedTitles.push(title.join(""))
+        : false
+    )
+  );
+console.log(duplicatedTitles);
+
+// Find the word that is mostly duplicated using sort Optional
+
+const duplicatedWords = [];
+
+movies
+  .map((movie) => movie.title.split(" "))
+  .forEach((title) =>
+    title.filter((word, index) =>
+      title.indexOf(word) != index ? duplicatedWords.push(word) : false
+    )
+  );
+
+const sortedDuplicatedWords = duplicatedWords.sort();
+const objWords = [];
+for (let i = 0; i < sortedDuplicatedWords.length; i = i + count) {
+  count = 1;
+  for (let j = i + 1; j < sortedDuplicatedWords.length; j++) {
+    if (sortedDuplicatedWords[i] === sortedDuplicatedWords[j]) count++;
+  }
+  objWords.push({
+    word: sortedDuplicatedWords[i],
+    count: count,
+  });
+}
+
+const sortedObjWords = objWords.sort((a, b) => (b.count > a.count ? 1 : -1));
+console.log(
+  `The nost duplicated word is ${sortedObjWords[0].word}, it occurs ${sortedObjWords[0].count} times.`
+);
