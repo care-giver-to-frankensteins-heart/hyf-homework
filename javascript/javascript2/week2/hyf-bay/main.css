@@ -1,20 +1,21 @@
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #f9fbfd;
+  margin-top: 2em;
+  margin-left: 2em;
 }
 
 * {
   box-sizing: border-box;
 }
 
-body,
 h1,
 h2 {
-  margin: 0;
+  margin-bottom: 0.2em;
 }
 
 ul {
   list-style-type: none;
-  margin: 0;
+  margin: 2em;
   padding: 0;
 }
