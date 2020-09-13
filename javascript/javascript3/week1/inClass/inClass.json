@@ -1,0 +1,17 @@
+{
+  "firstOrder": {
+    "name": "pizza margherita",
+    "id": 577,
+    "price": null,
+    "listOfDrinks": ["mojito", "arnold palmer"],
+    "extras": ["mushrooms", "hard boiled egg", "mayo"]
+  },
+
+  "secondOrder": {
+    "name": "pizza hawaii",
+    "id": 599,
+    "price": 100,
+    "listOfDrinks": ["coca-cola", "sprite", 9],
+    "extras": ["peppers", "mayo"]
+  }
+}
