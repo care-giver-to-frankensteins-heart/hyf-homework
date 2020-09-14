@@ -1,0 +1,48 @@
+[
+  {
+    "test": {
+      "javascript": {
+        "question1": {
+          "question": "What is the HTML tag under which one can write Javascript code?",
+          "options": ["<javascript>", "<scripted>", "<script", "<js>"],
+          "answer": "<script>"
+        },
+        "question2": {
+          "question": "Which of the following is the correct syntax to display 'Hello World' in an alert box using Javascript?",
+          "options": [
+            "alertbox('Hello World');",
+            "msg('Hello World');",
+            "msgbox('Hello World');",
+            "alert('Hello World');"
+          ],
+          "answer": "alert('Hello World');"
+        },
+        "question3": {
+          "question": "What is the correct syntax for referring to an external script called 'helper.js'?",
+          "options": [
+            "<script src='helper.js'>",
+            "<script href='helper.js'>",
+            "<script ref='helper.js'>",
+            "<script name='helper.js'>"
+          ],
+          "answer": "<script src='helper.js'>"
+        },
+        "question4": {
+          "question": "Which of of the following is not a reserved word in JavaScript?",
+          "options": ["Interface", "Throws", "Program", "Short"],
+          "answer": "Program"
+        },
+        "question5": {
+          "question": "How can you get the total number of arguments passed to a function?",
+          "options": [
+            "Using args.length property",
+            "Using arguments.length property",
+            "Both of the above",
+            "None of the above"
+          ],
+          "answer": "Using arguments.length property"
+        }
+      }
+    }
+  }
+]
