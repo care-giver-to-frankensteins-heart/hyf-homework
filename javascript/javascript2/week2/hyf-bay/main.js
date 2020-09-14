@@ -8,14 +8,8 @@ let productsToDisplay = [...products];
 let textFilter = "";
 let priceFilter = "";
 
-function renderProducts() {
-  const listOfProducts = document.createElement("ul");
-  listOfProducts.innerHTML = "";
-  const main = document.querySelector("main");
-  main.appendChild(listOfProducts);
-  const ul = document.querySelector("ul");
-  ul.innerHTML = "";
-  productsToDisplay = products.filter((product) => {
+function filterProducts(products) {
+  return products.filter((product) => {
     if (textFilter !== "") {
       if (!product.name.toLowerCase().includes(textFilter)) {
         return false;
@@ -28,6 +22,16 @@ function renderProducts() {
     }
     return true;
   });
+}
+
+function renderProducts() {
+  const listOfProducts = document.createElement("ul");
+  listOfProducts.innerHTML = "";
+  const main = document.querySelector("main");
+  main.appendChild(listOfProducts);
+  const ul = document.querySelector("ul");
+  ul.innerHTML = "";
+  productsToDisplay = filterProducts(products);
   document.querySelector("ul").innerHTML = "";
   productsToDisplay.forEach((product) => {
     const li = document.createElement("li");
