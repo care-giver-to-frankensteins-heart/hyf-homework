@@ -78,10 +78,17 @@ getCurrentLocation()
 
 //Do the steps above using promises and .then
 
-function getPromiseData() {
-  fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
+function getTodaysCovidDataPromise() {
+  fetch("https://covid-193.p.rapidapi.com/statistics?country=Denmark", {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "covid-193.p.rapidapi.com",
+      "x-rapidapi-key": "648fc0d332mshda822f4d5f06c4dp1daa64jsn4f8cef537552",
+    },
+  })
     .then((response) => response.json())
-    .then((data) => console.log("asyncPromise", data));
+    .then((data) => console.log("resolvedWithPromise", data))
+    .catch((err) => console.log(err));
 }
 /*function timedData() {
   setTimeout(() => {
@@ -91,19 +98,31 @@ function getPromiseData() {
 timedData();*/
 
 //Do the 3 steps using async/await
-async function getAwaitData() {
-  const response = await fetch(
-    "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
-  );
-  const randomData = await response.json();
-  console.log("asyncAwait", randomData);
-  return randomData;
+async function getTodaysCovidDataAwait() {
+  try {
+    const response = await fetch(
+      "https://covid-193.p.rapidapi.com/statistics?country=Denmark",
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "covid-193.p.rapidapi.com",
+          "x-rapidapi-key":
+            "648fc0d332mshda822f4d5f06c4dp1daa64jsn4f8cef537552",
+        },
+      }
+    );
+    const covidData = await response.json();
+    console.log("resolvedWithAwait", covidData);
+    return covidData;
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 function timedData() {
   setTimeout(() => {
-    getPromiseData();
-    getAwaitData();
+    getTodaysCovidDataPromise();
+    getTodaysCovidDataAwait();
   }, 3000);
 }
 timedData();
