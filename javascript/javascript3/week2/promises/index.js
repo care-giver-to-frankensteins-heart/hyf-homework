@@ -87,7 +87,7 @@ function getTodaysCovidDataPromise() {
     },
   })
     .then((response) => response.json())
-    .then((data) => console.log("resolvedWithPromise", data))
+    .then((data) => console.log("resolvedPromise", data))
     .catch((err) => console.log(err));
 }
 /*function timedData() {
@@ -112,7 +112,7 @@ async function getTodaysCovidDataAwait() {
       }
     );
     const covidData = await response.json();
-    console.log("resolvedWithAwait", covidData);
+    console.log("respondedWithAwait", covidData);
     return covidData;
   } catch (err) {
     console.log(err);
