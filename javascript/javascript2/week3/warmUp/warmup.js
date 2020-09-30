@@ -1,14 +1,14 @@
 // Log out the text- Called after 2.5 seconds,
 //2.5 seconds after the script is loaded.
 
-const f = () =>
+const loadScript = () =>
   setTimeout(() => {
     console.log("Called after 2.5 seconds");
   }, 2500);
 //f();
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  f();
+  loadScript();
 });
 
 // Create a function that takes 2 parameters: delay and stringToLog.
