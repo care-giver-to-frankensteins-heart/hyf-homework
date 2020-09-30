@@ -1,6 +1,8 @@
 //let url = "https://api.openweathermap.org/data/2.5/weather?q=copenhagen&appid=9ebe0b81616081651a65b03e4c5c4088";
 
 let url = "";
+const input = document.getElementById("city");
+const btn = document.getElementById("btn-city");
 
 function fetchData(url) {
   document.getElementById("weather-data").innerHTML = "Loading data";
@@ -9,8 +11,7 @@ function fetchData(url) {
   });
 }
 
-const input = document.getElementById("city");
-const btn = document.getElementById("btn-city");
+
 
 btn.addEventListener("click", () => {
   if (input.value) {
