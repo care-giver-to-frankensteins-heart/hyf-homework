@@ -1,4 +1,8 @@
 let url = "";
+const input = document.getElementById("search-word");
+const number = document.getElementById("number");
+const btn = document.getElementById("search-btn");
+
 
 function fetchData(url) {
   return fetch(url).then((response) => response.json());
@@ -7,9 +11,7 @@ function fetchData(url) {
   //  });
 }
 
-const input = document.getElementById("search-word");
-const number = document.getElementById("number");
-const btn = document.getElementById("search-btn");
+
 
 btn.addEventListener("click", () => {
   if (input.value) {
