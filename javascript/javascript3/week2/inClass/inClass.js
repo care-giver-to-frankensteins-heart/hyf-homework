@@ -177,3 +177,5 @@ const dataMovies = fetch(
 Promise.all([dataAstronauts, dataMovies]).then((values) => {
   console.log(values);
 });
+
+

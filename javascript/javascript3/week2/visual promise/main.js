@@ -60,3 +60,5 @@ async function translateAllAtOnce() {
   console.log("All circles moved at the same time");
 }
 translateAllAtOnce();
+
+
