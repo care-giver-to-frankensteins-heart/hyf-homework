@@ -1,7 +1,7 @@
 -- Create a new database containing the following tables:
 -- Class: with the columns: id, name, begins (date), ends (date)
 -- Student: with the columns: id, name, email, phone, class_id (foreign key)
-
+DROP DATABASE IF EXISTS `hyf_school_db`;
 CREATE DATABASE `hyf_school_db` DEFAULT CHARACTER SET utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 USE `hyf_school_db`;
