@@ -20,8 +20,8 @@ NOW(),
 
 -- Change the title of a task with these attributes: taskID, newTitle
 UPDATE hyf.task
-SET title = 'Already a billionaire'
-WHERE id = 2;
+SET title = REPLACE(title, 'billionaire', 'millionaire')
+WHERE id = 2 OR due_date = '2020-05-01 12:30:00';
 
 -- Change the task due date with these attributes: taskID, newDueDate
 UPDATE hyf.task
