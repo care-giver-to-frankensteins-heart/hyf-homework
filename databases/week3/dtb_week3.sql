@@ -65,6 +65,63 @@ INSERT INTO meal (
   '2021-01-01 18:00:00',
   15,
   150.00);
+
+   
+  INSERT INTO meal (
+  title,
+  description,
+  location,
+  when_date,
+  max_reservation,
+  price) VALUES (
+  'Fancy Dinner',
+  'Expensive dinner for the whole family. Super rare ingredients.',
+  'Copenhagen, finest restaurant',
+  '2021-01-01 18:00:00',
+  8,
+  500.00);
+  
+  INSERT INTO meal (
+  title,
+  description,
+  location,
+  when_date,
+  max_reservation,
+  price) VALUES (
+  'Seafood madness',
+  'FUN family lobster/crab/oysters mukbank',
+  'Copenhagen, on a boat',
+  '2021-01-01 18:00:00',
+  10,
+  100.00);
+  
+INSERT INTO meal (
+  title,
+  description,
+  location,
+  when_date,
+  max_reservation,
+  price) VALUES (
+  'Dine on a budget',
+  'Tasty food for affordable prices. 3 course meal.',
+  'Copenhagen, at my home',
+  '2021-01-01 18:00:00',
+  4,
+  25.00);
+  
+  INSERT INTO meal (
+  title,
+  description,
+  location,
+  when_date,
+  max_reservation,
+  price) VALUES (
+  'Perfect date dinner',
+  'Eat with a view on a table covered with roses. Food is spicy and sweet.',
+  'Copenhagen, location not disclosed yet',
+  '2021-01-01 18:00:00',
+  2,
+  80.00);
  
 -- Get a meal with any id, fx 1
 SELECT * 
@@ -101,6 +158,38 @@ NOW(),
 'ipoljupci@gmail.com'
 );
 
+INSERT INTO reservation (
+number_of_guests,
+meal_id,
+created_date,
+contact_phonenumber,
+contact_name,
+contact_email
+) VALUES (
+5,
+1,
+NOW(),
+'12345678',
+'valentina',
+'vmendez@gmail.com'
+);
+
+INSERT INTO reservation (
+number_of_guests,
+meal_id,
+created_date,
+contact_phonenumber,
+contact_name,
+contact_email
+) VALUES (
+7,
+1,
+NOW(),
+'87654321',
+'kavya',
+'kavya@gmail.com'
+);
+
 -- Get a reservation with any id fx. 
 SELECT *
 FROM reservation 
@@ -130,6 +219,55 @@ INSERT INTO review (
     'it was so perfect and delicious',
     1,
     5
+);
+
+
+INSERT INTO review (
+    title,  
+    description,
+    meal_id,
+    stars
+) VALUES (
+    'so-so!!!',
+    'average/mild/bland',
+    3,
+    3
+);
+
+INSERT INTO review (
+    title,  
+    description,
+    meal_id,
+    stars
+) VALUES (
+    'good!!!',
+    'tastes very nice',
+    2,
+    4
+);
+
+INSERT INTO review (
+    title,  
+    description,
+    meal_id,
+    stars
+) VALUES (
+    'terrible!!!',
+    'pure disaster',
+    5,
+    1
+);
+
+INSERT INTO review (
+    title,  
+    description,
+    meal_id,
+    stars
+) VALUES (
+    'nearly terrible!!!',
+    'barely digestable',
+    6,
+    2
 );
 
 -- Get a review with any id, fx 1
