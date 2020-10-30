@@ -4,13 +4,15 @@
   "description": "",
   "main": "src/backend/server.js",
   "scripts": {
+    "start": "node src/backend/server.js",
+    "dev": "nodemon src/backend/server.js",
     "test": "jest --runInBand"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^26.2.2",
-    "nodemon": "^1.19.1",
+    "nodemon": "^1.19.4",
     "superagent": "^5.3.1",
     "supertest": "^4.0.2"
   },

@@ -1,0 +1,27 @@
+[
+    {
+        "id" : 1,
+        "title" : "Indian food in the summer",
+        "maxNumberOfGuests" : 5,
+        "description" : "A nice night out eating delicious Indian food",
+        "createdAt" : "2019/12/7 14:34",
+        "price" : 67.00
+    },
+    {
+        "id" : 2,
+        "title" : "Vietnamese food in the summer",
+        "maxNumberOfGuests" : 8,
+        "description" : "A nice night out eating hot Vietnamese food",
+        "createdAt" : "2019/12/7 14:40",
+        "price" : 80.00
+    },
+
+    {
+        "id" : 3,
+        "title" : "Asian food in the summer",
+        "maxNumberOfGuests" : 9,
+        "description" : "A nice night out eating yummy Asian food",
+        "createdAt" : "2019/12/7 14:55",
+        "price" : 100.00
+    }
+]
