@@ -1,0 +1,22 @@
+* {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+body {
+  padding: 3em;
+}
+
+button {
+  border: solid azure 3px;
+  background-color: burlywood;
+  padding: 0.2em;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 5px 5px 10px lightgrey;
+}
+
+p {
+  padding-top: 1em;
+  color: #a5e412;
+}
