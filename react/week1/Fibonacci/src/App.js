@@ -4,10 +4,12 @@ import "./App.css";
 export function Counter() {
   const [counterState, setCounterState] = useState([0, 1]);
   const increment = () => {
-    const lastNumber = counterState[counterState.length - 1];
-    const secondLastNumber = counterState[counterState.length - 2];
-    const nextFibonacci = lastNumber + secondLastNumber;
-    setCounterState([...counterState, nextFibonacci]);
+    setCounterState((previous) => {
+      const lastNumber = previous[previous.length - 1];
+      const secondLastNumber = previous[previous.length - 2];
+      const nextFibonacci = lastNumber + secondLastNumber;
+      return [...previous, nextFibonacci];
+    });
   };
   return (
     <div>
