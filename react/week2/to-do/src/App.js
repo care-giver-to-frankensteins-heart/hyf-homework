@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import data from "./data/data.json";
+import Header from "./components/Header";
+import Counter from "./components/Counter";
+import ListSection from "./components/ListSection";
 
 function App() {
+  // hooks
+  const [state, setState] = useState(null);
+  if (state === null) setTimeout(() => setState(data), 3000);
+
   return (
+    // Render a basic static todo list with three items:
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Counter />
+      {state ? <ListSection items={state} /> : <p>Loading...</p>}
     </div>
   );
 }
