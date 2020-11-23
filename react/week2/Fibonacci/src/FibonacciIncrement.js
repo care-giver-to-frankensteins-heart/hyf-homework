@@ -2,11 +2,11 @@ import React from "react";
 export function FibonacciIncrement(prop) {
   const increment = () => {
     prop.setFiboList((previous) => {
-      // calling back to his parent
-      const lastNumber = previous[previous.length - 1];
-      const secondLastNumber = previous[previous.length - 2];
-      const nextFibonacci = lastNumber + secondLastNumber;
-      return [...previous, nextFibonacci];
+      const fibSequence = [...previous];
+      for (let i = previous.length; i < previous.length + 10; i++) {
+        fibSequence[i] = fibSequence[i - 1] + fibSequence[i - 2];
+      }
+      return [...fibSequence];
     });
   };
   return (
