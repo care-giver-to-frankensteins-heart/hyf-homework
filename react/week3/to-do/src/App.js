@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Counter from "./components/Counter";
+import ListSection from "./components/ListSection";
 
 function App() {
+  // data
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw"
+    )
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
+    // render a basic todo list with three items:
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Counter />
+      {data.length === 0 ? <p>Loading..</p> : <ListSection items={data} />}
     </div>
   );
 }
