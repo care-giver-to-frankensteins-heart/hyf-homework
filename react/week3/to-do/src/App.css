@@ -1,7 +1,10 @@
 .App {
-  font-size: 1.1em;
-  margin-left: 1.8em;
-  text-align: left;
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -11,76 +14,18 @@
 }
 
 .App-header {
-  background-color: none;
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #333;
+  color: white;
 }
 
 .App-link {
   color: #61dafb;
-}
-.List li {
-  border: 3px solid #000;
-  margin: 0.4em 0;
-  max-width: 600px;
-  padding: 0.5em;
-}
-
-.List li input {
-  margin: 0.2em 0.5em;
-}
-
-.List li input[type="text"] {
-  font-size: 0.9em;
-  min-width: 208px;
-  padding: 0;
-  margin: 0;
-}
-
-.List li .line-through {
-  text-decoration: line-through;
-}
-
-.List li .no-decoration {
-  text-decoration: none;
-}
-
-.List form label {
-  display: inline-block;
-  margin: 0 0 0.3em;
-}
-
-.List form label span {
-  margin-right: 0.2em;
-}
-
-.List form label input {
-  font-size: 0.7em;
-  min-width: 150px;
-  padding: 0.2em;
-}
-
-.List form button {
-  font-size: 0.9em;
-}
-
-.List ul {
-  margin-top: 1.5em;
-}
-
-.react-date-picker__clear-button {
-  display: none;
-}
-
-.List form label .react-date-picker__inputGroup input {
-  font-size: 0.8em;
-  min-width: auto;
-  padding: 0 0.2em;
-  width: calc(100% + 10px);
 }
 
 @keyframes App-logo-spin {
