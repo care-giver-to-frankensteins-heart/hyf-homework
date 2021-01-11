@@ -1,5 +1,7 @@
 celery
 beetroot
-cabbage
+red cabbage
 spinach
 onions
+bell pepers
+tomatoes
