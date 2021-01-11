@@ -1,5 +1,8 @@
 celery
 beetroot
-cabbage
+red cabbage
 onions
 tomatoes
+red onions
+green salad
+
