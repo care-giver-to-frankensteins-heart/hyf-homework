@@ -1,5 +1,5 @@
 celery
 beetroot
-fermented cabbage
-spinach
+cabbage
 onions
+tomatoes
