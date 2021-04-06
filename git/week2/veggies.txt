@@ -1,0 +1,8 @@
+celery
+beetroot
+red cabbage
+onions
+tomatoes
+red onions
+green salad
+
